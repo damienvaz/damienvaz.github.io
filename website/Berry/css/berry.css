@@ -1185,3 +1185,9 @@ form .form-control:focus {
 .omb_login{
   margin-bottom: 3%;
 }
+
+
+.dropdown > a:hover{
+    background-color: #ffffff;
+    color: #555555;
+}
