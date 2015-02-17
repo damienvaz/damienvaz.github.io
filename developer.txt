@@ -1,4 +1,0 @@
-Two files are created : website | countdownWebsite
-website file represents the website which is being constructed.
-countdownWebsite represents the backup file of the website for the countdown timer website.
-The others files that are on the root path , is for the execution of the coutdown.
