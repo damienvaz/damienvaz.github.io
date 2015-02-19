@@ -1,0 +1,184 @@
+@import 'bootstrap/bootstrap';
+
+/* Flat Colours*/
+$greenF : #2ecc71;
+$blueF : #2574A9;
+$purpleF : #9b59b6;
+$yellowF : #f39c12;
+$orangeF : #F4B350;
+$redF : #EF4836;
+$whiteF : #ecf0f1;
+$greyF : #95a5a6;
+
+@font-face {
+    font-family: "pixelFont";
+    src: url('../fonts/lcd_solid.ttf'); /* IE9 Compat Modes */
+}
+
+body{
+    background-color: #F2F1EF;   
+}
+
+/*Header section*/
+div#header{
+    display: block;
+    background-color: $redF !important;
+    //height: inherit;
+    min-height: inherit;
+    margin-bottom: 0px !important;
+    border-bottom: 0px !important;
+    
+    #logo{
+        width: auto;
+        //height: auto;
+        
+        a{
+            font-family: 'pixelFont', Monaco, monospace;
+            width: auto;
+            font-size: 310%; //250%
+            color: #FFF;
+            text-decoration: none;
+            margin-top:auto;
+            margin-bottom:auto;
+        }
+    }
+    
+    #buttonD a{
+        position: relative;
+        color: rgba(255,255,255,1);
+        text-decoration: none;
+        background-color: rgba(219,87,5,1);
+        font-family: 'pixelFont', Monaco, monospace;
+        font-weight: 700;
+        font-size: 115%;//1.5em;
+        display: block;
+        padding: 4px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+        margin: 10px auto;
+        margin-bottom: 20px;
+        width: auto;
+        text-align: center;
+
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        transition: all .1s ease;
+    }
+
+    
+    #buttonD a:active,#buttonD a.actived {
+        -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+        position: relative;
+        top: 6px;
+    }
+}
+
+div#presentation{
+    margin-top:2vh;
+}
+
+/*Me section*/
+div#me{
+    #photo{
+        margin-top: 10px;
+        width: 200px;//20%; //300px
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+        /*Tableau*/
+        -webkit-box-shadow: 0px 0px 0px 14px rgba(224,152,29,1);
+        -moz-box-shadow: 0px 0px 0px 14px rgba(224,152,29,1);
+        box-shadow: 0px 0px 0px 14px rgba(224,152,29,1);
+        background-color: #b58a35;
+        padding: 10px;
+    }
+    
+    p{
+        font-family: "pixelFont", Monaco, monospace;
+        font-size: 30px;//2vw;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        border: 1px solid $greenF;
+        background-color: $greenF;
+        color: $whiteF;
+        text-align: center;
+        padding: 20px;
+        margin-top: 5vh;
+        
+        //-webkit-border-radius: 8px;
+        //-moz-border-radius: 8px;
+        //border-radius: 8px;
+        -webkit-box-shadow: 0px 9px 0px rgba(38, 166, 91,1);
+        -moz-box-shadow: 0px 9px 0px rgba(38, 166, 91,1);
+        box-shadow: 0px 9px 0px rgba(38, 166, 91,1);
+        
+        a{
+            font-family: "pixelFont", Monaco, monospace;
+            color: $redF;
+            text-decoration: none;
+        }
+        
+        a:hover{
+            color:$blueF; 
+        }
+    }
+    
+    #github, #linkedin, #twitter,#mail{
+        height: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+    }
+    
+}
+
+/*Developer interface*/
+div#developerMode{
+    display:none;
+    
+    .terminal-header{
+        width: 100%;
+        height: 30px;
+        background-color: #95A5A6;
+        margin: 0 auto;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-top-right-radius: 5px;
+        border-top-right-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+        text-align: center;
+
+        span{
+            color: #ECECEC;
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 17px;
+            font-weight: 700;
+            position: relative;
+            top: 3px;   
+        }
+    }
+    
+    .terminal-body{
+        height: 80vh;
+        -webkit-border-radius: 0px 0px 3px 3px;
+        -moz-border-radius: 0px 0px 3px 3px;
+        border-radius: 0px 0px 3px 3px;
+        border-radius: 0px 0px 3px 3px;
+        border: 1px solid #95A5A6;
+    }
+}
+
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/terminal.css"/>
+    </header>
+    <body>
+        <!-- header -->
+        <div class="container-fluid" id="header">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-lg-2">
+                    <div id="logo">
+                        <a href="">DV</a>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-lg-10">
+                    <div class="pull-right" id="buttonD">
+                        <a href="javascript:void(0);" class="pull-right">Developer Mode</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        
+        <!-- -->
+        <div class="container-fluid" id="presentation">
+            <div class="row" id="me">
+                <div class="col-lg-12">
+                    <img src="img/me2.png" id="photo"/>
+                </div>
+                <div class="col-lg-12">
+                    <p>Hey,I'm Damien. I am graduating from the <a href="http://www.di.uminho.pt/eng/" target="_blank">University of Minho</a>. Actually doing my master degree in the Software Development. If you want more info about me, check under:</p>
+                </div>
+                
+                <div class="col-xs-0 col-sm-2 col-lg-2"></div>
+                <!-- github -->
+                <div class="col-xs-6 col-sm-2 col-lg-2">
+                    <a href="https://github.com/damienvaz" target="_blank">
+                        <img src="img/github.png"/ id="github">
+                    </a>
+                </div>
+                <!-- linkedin -->
+                <div class="col-xs-6 col-sm-2 col-lg-2">
+                    <a href="https://www.linkedin.com/profile/view?id=218259288" target="_blank">
+                        <img src="img/linkedin.png" id="linkedin"/>
+                    </a>
+                </div>
+                <!-- twitter -->
+                <div class="col-xs-6 col-sm-2 col-lg-2">
+                    <a href="https://twitter.com/Damiii45" target="_blank">
+                        <img src="img/twitter.png" id="twitter"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-2 col-lg-2">
+                    <a href="mailto:damienvaz.github.io@gmail.com" target="_top">
+                        <img src="img/mail.png" id="mail"/>
+                    </a>
+                </div>
+                <div class="col-xs-0 col-sm-2 col-lg-2"></div>
+            </div>
+            
+            <div class="row" id="developerMode">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="terminal-header">
+                        <span>damienvaz - bash</span>
+                    </div>
+                    <div class="terminal-body">
+                    
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+        <!-- -->
+        
+        
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/terminal/jquery.mousewheel-min.js"></script>
+        <script src="js/terminal/jquery.terminal-min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/terminal.js"></script>
+        <script>
+            $('#buttonD').click(function() {
+              //put the effect of being actived or not !
+                $(this).children().toggleClass("actived");
+                if($(this).children().hasClass("actived")){
+                    $('#me').toggle();
+                    $("body").css({"background-color":"#2574A9"});
+                    $('#developerMode').toggle();
+                }
+                else{
+                    $('#me').toggle();
+                    $('#developerMode').toggle();
+                    $("body").css({"background-color":"#F2F1EF"});
+                }
+            });
+            
+            
+        </script>
+    </body>
+</html>
