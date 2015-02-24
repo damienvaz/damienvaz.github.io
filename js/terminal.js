@@ -116,10 +116,10 @@ jQuery(document).ready(function($) {
         },
         clear: true,
         keypress: function(key, term) {
-            console.log("k1");
-            console.log(key);
+            //console.log("k1");
+            //console.log(key);
             if (key.which == 68 && key.shiftKey) {
-                console.log("entrei aqui no keypress");
+                //console.log("entrei aqui no keypress");
                 stop = true;
                 term.resume();
                 return false;
