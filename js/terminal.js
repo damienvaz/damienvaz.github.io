@@ -5,20 +5,13 @@ jQuery(document).ready(function($) {
     var DELAY = 67;
     //star_wars is array of lines from 'js/star_wars.js'
     var lines = star_wars.length;
-    //console.log(lines);
-    console.log(star_wars);
-    
-    console.log("inicio da decomposiçao");
     for (var i=0; i<lines; i+=LINES_PER_FRAME) {
-        //console.log("hello");
-        //console.log(star_wars.slice(i, i+LINES_PER_FRAME));
         frames.push(star_wars.slice(i, i+LINES_PER_FRAME));
     }
-    //frames.push("Hello");
-    console.log(frames);
     var stop = false;
 
-    function play(term, delay) {
+    function play(term) {
+        var delay;
         var i = 0;
         var next_delay;
         if (delay == undefined) {
@@ -39,7 +32,7 @@ jQuery(document).ready(function($) {
                 setTimeout(display, next_delay);
             } else {
                 term.clear();
-                greetings(term);
+                //greetings(term);
                 i = 0;
             }
         }
@@ -88,12 +81,13 @@ jQuery(document).ready(function($) {
                           'Simon Jansen (C) 1997 - 2008\n'+
                           'www.asciimation.co.nz\n\n'+
                           'type "play" to start animation, '+
-                          'press CTRL+D to stop');
+                          'press SHIFT+D to stop');
             term.push(function(command, term){
                 //term.pop();
                 if (command == 'play') {
                     term.pause();
                     stop = false;
+                    console.log(term);
                     play(term);
                 }else if(command== 'help'){
                     term.echo("Available commands are : 'play', 'back' ");
@@ -104,7 +98,7 @@ jQuery(document).ready(function($) {
                 }
                 
             },{ prompt: 'movies>', 
-                name: 'bash',
+                name: 'bash2',
                 //width: 500,
                 //height: 230,
                 //prompt: 'starwars> ',
@@ -112,7 +106,7 @@ jQuery(document).ready(function($) {
                 greetings: null
               });
         }else {
-            term.echo("Unknown command " + command);
+            term.echo("Unknown command '" + command + "' \t (Type 'help' to see all the commands available.)");
         }
     }, {
         greetings: "Type 'help' to see all the commands available.",
@@ -121,8 +115,11 @@ jQuery(document).ready(function($) {
             return false;
         },
         clear: true,
-        keypress: function(e, term) {
-            if (e.which == 100 && e.ctrlKey) {
+        keypress: function(key, term) {
+            console.log("k1");
+            console.log(key);
+            if (key.which == 68 && key.shiftKey) {
+                console.log("entrei aqui no keypress");
                 stop = true;
                 term.resume();
                 return false;
